@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE 
+.vscode/
+.idea/
+
+# Generated test data 
+data/test_data.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# dossiers
+graphes
