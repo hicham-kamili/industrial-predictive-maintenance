@@ -330,3 +330,9 @@ AI4I 2020 Predictive Maintenance Dataset
 UCI Machine Learning Repository
 
 Dataset licensed under **CC BY 4.0**.
+
+### Model comparison
+
+The F1-score highlights the limitations of accuracy on this highly imbalanced dataset and shows the improvement obtained with the Random Forest model.
+
+![Model comparison](results/model_comparison.png)

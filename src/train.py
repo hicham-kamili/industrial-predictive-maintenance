@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+import matplotlib.pyplot as plt
+
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
     confusion_matrix,
@@ -217,3 +219,41 @@ for threshold in thresholds:
     print(f"Precision: {precision:.3f}")
     print(f"Recall   : {recall:.3f}")
     print(f"F1-score : {f1:.3f}")
+
+
+# demonstration graphe :
+model_names = [
+    "Baseline",
+    "Logistic Regression",
+    "Balanced Logistic",
+    "Random Forest"
+]
+
+f1_scores = [
+    f1_score(y_test, y_pred_baseline),
+    f1_score(y_test, y_pred),
+    f1_score(y_test, y_pred_balanced),
+    f1_score(y_test, y_pred_rf)
+]
+
+plt.figure(figsize=(9, 5))
+
+plt.bar(model_names, f1_scores)
+
+plt.ylabel("F1-score")
+plt.xlabel("Model")
+plt.title("Model Comparison - F1 Score")
+
+plt.ylim(0, 1)
+
+plt.xticks(rotation=15)
+
+plt.tight_layout()
+
+plt.savefig(
+    "results/model_comparison.png",
+    dpi=150
+)
+
+plt.close()
+
